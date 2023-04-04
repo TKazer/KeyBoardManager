@@ -12,6 +12,7 @@ namespace KeyBoardManager
 		void StartListening()
 		{
 			this->ListenThread = std::thread{ &KeyBoard_Async::_listen_thread, this };
+			this->ListenThread.detach();
 		}
 		void StopListening()
 		{
